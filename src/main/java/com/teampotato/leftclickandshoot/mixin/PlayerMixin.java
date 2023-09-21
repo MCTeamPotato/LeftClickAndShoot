@@ -8,21 +8,20 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(Player.class)
-public abstract class PlayerMixin implements PlayerTheBowUser {
+public class PlayerMixin implements PlayerTheBowUser {
 
     @Unique
     @Nullable
     protected ItemStack leftClickAndShoot$usingBowStack = null;
 
-
     @Override
-    public void leftClickAndShoot$setUsingBowStack(@Nullable ItemStack itemStack) {
+    public void leftClickAndShoot$setUsingStack(@Nullable ItemStack itemStack) {
         this.leftClickAndShoot$usingBowStack = itemStack;
     }
 
     @Override
     @Nullable
-    public ItemStack leftClickAndShoot$getUsingBowStack() {
+    public ItemStack leftClickAndShoot$getUsingStack() {
         return this.leftClickAndShoot$usingBowStack;
     }
 }
