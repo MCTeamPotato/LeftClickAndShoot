@@ -1,6 +1,6 @@
 package com.teampotato.leftclickandshoot;
 
-import com.teampotato.leftclickandshoot.event.BowEvents;
+import com.teampotato.leftclickandshoot.event.EventHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 
@@ -9,6 +9,6 @@ public class LeftClickAndShoot {
     public static final String MOD_ID = "leftclickandshoot";
 
     public LeftClickAndShoot() {
-        MinecraftForge.EVENT_BUS.register(BowEvents.class);
+        MinecraftForge.EVENT_BUS.register(EventHandler.class);
     }
 }
