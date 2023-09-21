@@ -1,6 +1,6 @@
 package com.teampotato.leftclickandshoot.mixin;
 
-import com.teampotato.leftclickandshoot.api.PlayerTheBowUser;
+import com.teampotato.leftclickandshoot.api.PlayerTheItemUser;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -16,7 +16,7 @@ public abstract class ItemMixin {
     @Inject(method = "releaseUsing", at = @At("HEAD"), cancellable = true)
     private void disableVanillaLogic(ItemStack pStack, Level pLevel, LivingEntity pEntityLiving, int pTimeLeft, CallbackInfo ci) {
         if (pEntityLiving instanceof Player player) {
-            if (((PlayerTheBowUser)player).leftClickAndShoot$getUsingStack() == null) ci.cancel();
+            if (((PlayerTheItemUser)player).leftClickAndShoot$getUsingStack() == null) ci.cancel();
         }
     }
 }
